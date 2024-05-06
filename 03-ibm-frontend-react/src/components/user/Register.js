@@ -35,7 +35,8 @@ const Register = () => {
             })
             .catch((error) => {
                 console.log(error);
-                setAfterRegisterMessage(`Invalid credentials!`);
+                setRegisterData({ username: '', password: '' });
+                setAfterRegisterMessage(`Username already exists!`);
             });
 
     };

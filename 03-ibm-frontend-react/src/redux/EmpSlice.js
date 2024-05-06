@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-console.log('empSlice');
+
 const empSlice = createSlice({
     name: 'emp',
     initialState : { 

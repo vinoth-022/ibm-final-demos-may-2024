@@ -3,13 +3,13 @@
 import User from '../models/user.model.js';
 
 const registerUser = async (userData) => {
-    console.log('service');
-    console.log(userData);
+    console.log('service', userData);
     try {
         const user = new User(userData);
         await user.save();
         return user;
     } catch (error) {
+        console.log(error);
         throw new Error(error);
     }
 };
@@ -48,3 +48,5 @@ const updateUserProfile = async (userId, updatedData) => {
 const userService = { registerUser, loginUser, updateUserProfile };
 
 export default userService;
+
+
