@@ -1,4 +1,5 @@
-// UserService.js  
+
+// UserService.js
 
 import axios from 'axios';
 
@@ -48,7 +49,8 @@ const UserService = {
 
 export default UserService;
 
-// // UserService.js  
+
+// UserService.js
 
 // import axios from 'axios';
 
@@ -56,43 +58,45 @@ export default UserService;
 
 // const UserService = {
 
-//     registerUser: async (userData) => {
+//     registerUser: (userData) => {
 //         console.log(userData);
-//         try {
-//             const response = await axios.post(`${BASE_URL}/register`, userData);
-//             console.log(response);
-//             return response.data;
-//         } catch (error) {
-//             console.log(error);
-//             // return error;
-//             throw new Error(error);
-//         }
+//         axios.post(`${BASE_URL}/register`, userData)
+//             .then((response) => {
+//                 console.log(response);
+//                 return response.data;
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//                 throw new Error(error);
+//             });
 //     },
 
-//     loginUser: async (credentials) => {
+//     loginUser: (credentials) => {
 //         console.log(credentials);
-//         try {
-//             const response = await axios.post(`${BASE_URL}/login`, credentials);
-//             console.log(response);
-//             return response.data;
-//         } catch (error) {
-//             console.log(error);
-//             throw new Error(error);
-//         }
+//         axios.post(`${BASE_URL}/login`, credentials)
+//             .then((response) => {
+//                 console.log(response);
+//                 return response.data;
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//                 throw new Error(error);
+//             });
 //     },
 
 //     updateUserProfile: async (updatedData, token) => {
 //         console.log(updatedData);
-//         try {
-//             const response = await axios.put(`${BASE_URL}/users/${updatedData._id}`, updatedData, {
-//                 headers: { authorization: `Bearer ${token}` }
+//         axios.put(`${BASE_URL}/users/${updatedData._id}`, updatedData, {
+//             headers: { authorization: `Bearer ${token}` }
+//         })
+//             .then((response) => {
+//                 console.log(response);
+//                 return response.data;
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//                 throw new Error(error);
 //             });
-//             console.log(response.data);
-//             return response.data;
-//         } catch (error) {
-//             console.log(error);
-//             return error;
-//         }
 //     }
 // };
 

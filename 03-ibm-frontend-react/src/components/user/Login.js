@@ -42,9 +42,9 @@ const Login = () => {
 
     return (
         <>
-            <h1>Login Component</h1>
+            <h1 style={{ color: 'blue' }}>Login Component</h1>
             <p>Login here</p>
-            <form onSubmit={handleLoginSubmit}>
+            <form className="form form-group" onSubmit={handleLoginSubmit}>
                 <input type="text" name="username" value={loginData.username}
                     onChange={handleChange} autoFocus required />
                 <br />
