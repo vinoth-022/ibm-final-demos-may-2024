@@ -9,7 +9,7 @@ import cors from 'cors';
 const app = express();
 app.use(cors()); // needed to avoid CORS errors in frontend app 
 app.use(express.json());
-app.use(authenticateJWT); // uncomment to use authentication and authorization
+// app.use(authenticateJWT); // uncomment to use authentication and authorization
 
 const PORT = process.env.PORT || 2000; // set PORT=2002 && npm start
 

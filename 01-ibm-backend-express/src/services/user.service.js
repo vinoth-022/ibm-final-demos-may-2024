@@ -6,7 +6,7 @@ const registerUser = async (userData) => {
     console.log('service', userData);
     try {
         const user = new User(userData);
-        await user.save();
+        await user.save(); // 
         return user;
     } catch (error) {
         console.log(error);
