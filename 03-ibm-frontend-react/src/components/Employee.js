@@ -6,6 +6,8 @@ import ControlPanel from "./ControlPanel/ControlPanel";
 import axios from "axios";
 import { Provider } from "react-redux";
 import DeleteEmployee from "./DeleteEmployee";
+import UpdateEmployee from "./UpdateEmployee";
+
 
 
 
@@ -18,6 +20,9 @@ const Employee = () => {
             <br/>
             <DeleteEmployee/>
             <br/>
+            <UpdateEmployee/>
+            <br/>
+
             <TableView/>
         </>
     );

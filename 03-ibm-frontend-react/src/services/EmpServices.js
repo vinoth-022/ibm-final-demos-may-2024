@@ -12,6 +12,16 @@ const EmpService = {
         }
     },
 
+    update: async (employee, eid) => {
+        try {
+            const response = await axios.put(`http://localhost:8080/emp/update-emp/${eid}`, employee);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            throw new Error(error.response.data.message || error.message);
+        }
+    },
+
     delete: async (eid) => {
         try {
             const response = await axios.post(`http://localhost:8080/emp/delete-emp/${eid}`);
@@ -32,7 +42,9 @@ const EmpService = {
             console.log(error.config);
             throw new Error(error);
         }
-    }
+    },
+
+
 
 };
 
