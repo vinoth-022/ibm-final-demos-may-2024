@@ -4,7 +4,7 @@ import { useTable, usePagination, useSortBy, useRowSelect } from 'react-table';
 import axios from 'axios';
 import COLUMNS from '../utills/Columns';
 
-export default function TableView({ tableData, setTableData, setSelectedFlatRows, setIsOneRowSelected, setIsRowSelected, updateTable }) {
+export default function TableView({ tableData, setTableData, updateTable }) {
     useEffect(() => {
         axios.get("http://localhost:8080/emp/get-all-emps").then(response => setTableData(response.data));
     }, []);
@@ -55,15 +55,6 @@ export default function TableView({ tableData, setTableData, setSelectedFlatRows
         }
       );
 
-      useEffect(() => {
-        try {
-            setSelectedFlatRows(selectedFlatRows);
-            setIsOneRowSelected(selectedFlatRows.length === 1);
-            setIsRowSelected(selectedFlatRows.length > 0 && selectedFlatRows.length < 40);
-        } catch (error) {
-            console.error(error);
-        }
-      });
 
     const { pageIndex, pageSize } = state;
 
