@@ -17,6 +17,9 @@ const employeeSlice = createSlice({
                   state.employees[index] = action.payload;
               }
           },
+        showEmpList:(state,action)=>{
+            state.tableData=action.payload;
+    }
     }
 });
 

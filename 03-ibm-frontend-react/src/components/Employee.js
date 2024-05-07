@@ -7,6 +7,8 @@ import axios from "axios";
 import { Provider } from "react-redux";
 import DeleteEmployee from "./DeleteEmployee";
 import UpdateEmployee from "./UpdateEmployee";
+import Search from "./Search";
+
 
 
 
@@ -22,7 +24,8 @@ const Employee = () => {
             <br/>
             <UpdateEmployee/>
             <br/>
-
+            <Search/>
+            <br/>
             <TableView/>
         </>
     );

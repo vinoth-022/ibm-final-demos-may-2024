@@ -44,6 +44,16 @@ const EmpService = {
         }
     },
 
+    search: async (fName) => {
+            try {
+                const response = await axios.get(`http://localhost:8080/emp/get-emp-by-name/${fName}`);
+                return response.data
+            } catch (error) {
+                return error
+            }
+        },
+   
+
 
 
 };
