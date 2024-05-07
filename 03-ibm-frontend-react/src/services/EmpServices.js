@@ -3,6 +3,17 @@ import { setTableData, setLoading, setError } from '../redux/EmployeeSlice';
 import store from '../redux/Store';
 
 const EmpService = {
+
+    addEmp: async (employee) => {
+        try {
+            const response = await axios.post("http://localhost:8080/emp/add-emp",employee);
+            console.log(employee)
+            return response.data
+        } catch (error) {
+            return error
+        }
+    },
+
     getAllEmp: async () => {
         try {
             const response = await axios.get("http://localhost:8080/emp/get-all-emps");

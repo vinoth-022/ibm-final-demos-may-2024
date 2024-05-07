@@ -7,6 +7,11 @@ const employeeSlice = createSlice({
         employees: [],
     },
     reducers: {
+
+        addEmployee: (state,action) => {
+            state.tableData.push(action.payload);
+        },
+
         setTableData: (state, action) => {
             state.tableData = action.payload;
         },
@@ -23,5 +28,5 @@ const employeeSlice = createSlice({
     }
 });
 
-export const { setTableData, updatedEmployee } = employeeSlice.actions;
+export const { setTableData, updatedEmployee,addEmployee } = employeeSlice.actions;
 export default employeeSlice.reducer;

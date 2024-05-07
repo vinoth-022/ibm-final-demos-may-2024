@@ -1,9 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
-import Employee from "./Employee";
+import EmpService from "../services/EmpServices";
+import { useDispatch } from "react-redux";
+import { addEmployee } from '../redux/EmployeeSlice';
+
+
+
 
 // const AddEmployee = ({updateTableData}) => {
     const AddEmployee = () => {
+
+    const dispatch = useDispatch()
 
 
     const [empData, setEmpData] = useState({ firstname: '', lastname: '', email: '', salary: '', address: '' });
@@ -38,39 +45,23 @@ import Employee from "./Employee";
         return isValid;
     };
 
-    // const handleSubmit = (evt) => {
-    //     evt.preventDefault();
-    //     if (validateForm()) {
-    //         axios.post(backendUrl, empData)
-    //             .then((resp) => {
-    //                 alert(`${resp.data.firstName} with id ${resp.data.id} added successfully!`);
-    //                 setEmpData({ firstName: '', email: '', aadhaar: '', salary: '' });
-    //             })
-    //             .catch(error => {
-    //                 console.error("Error adding employee:", error);
-    //             });
-    //     }
-    // };
-
-    const handleSubmit = (evt) => {
-
+    const handleSubmit =async (evt) => {
         evt.preventDefault();
         if (validateForm()) {
-        // Send a POST request to your endpoint with the employee data
-        axios.post('http://localhost:8080/emp/add-emp', empData)
-            .then(response => {
-                console.log('Employee data saved:', response.data);
-                setEmpData({ firstname: '', lastname: '', email: '', salary: '', address: '' });
-                // Update table data or perform any necessary actions
-                // setTableData([]);
-                // updateTableData();
-            })
-            .catch(error => {
-                console.error('Error saving employee data:', error);
-                // Handle error if necessary
-            });
+            try {
+                const user = await EmpService.addEmp(empData);
+                console.log(user);
+               setEmpData({ firstname: '', lastname: '', email: '', salary: '', address: '' });
+               dispatch(addEmployee(user));
+            }
+            catch (error) {
+                console.log(error);
+                if (error.code === 'ERR_BAD_REQUEST')
+                    alert(error.message);
+            }
         }
     };
+
 
     return (
         <div className="container">
