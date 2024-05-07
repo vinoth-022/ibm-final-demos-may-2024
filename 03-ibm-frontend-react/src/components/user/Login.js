@@ -41,21 +41,34 @@ const Login = () => {
     };
 
     return (
-        <>
-            <h1 style={{ color: 'blue' }}>Login Component</h1>
-            <p>Login here</p>
-            <form onSubmit={handleLoginSubmit}>
-                <input type="text" name="username" value={loginData.username}
-                    onChange={handleChange} autoFocus required />
-                <br />
-                <input type="password" name="password" value={loginData.password}
-                    onChange={handleChange} required />
-                <br />
-                <input type="submit" value="Login" />
-            </form>
-            {afterSubmit && <p>{afterSubmit}</p>}
-            <p>Not yet registered? <Link to={'/register'}>Register</Link> </p>
-        </>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="text-center mb-4" style={{ color: 'blue' }}>Login</h1>
+                            <form onSubmit={handleLoginSubmit}>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" name="username" value={loginData.username}
+                                        onChange={handleChange} autoFocus required placeholder="Username" />
+                                </div>
+                                <br/>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" name="password" value={loginData.password}
+                                        onChange={handleChange} required placeholder="Password" />
+                                </div>
+                                <br/>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary btn-block">Login</button>
+                                </div>
+                            </form>
+                            {afterSubmit && <p className="text-center">{afterSubmit}</p>}
+                            <p className="text-center">Not yet registered? <Link to={'/register'}>Register</Link> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 export default Login;

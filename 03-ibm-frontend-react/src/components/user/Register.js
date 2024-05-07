@@ -42,24 +42,34 @@ const Register = () => {
     };
 
     return (
-        <>
-            <h1>Register Component</h1>
-            <p>Register here</p>
-            <form onSubmit={handleRegisterSubmit}>
-                <input type="text" name="username" value={registerData.username}
-                    onChange={handleChange} autoFocus required />
-                <br />
-                <input type="password" name="password" value={registerData.password}
-                    onChange={handleChange} required />
-                <br />
-                <input type="submit" value="Register" />
-            </form>
-            <>
-                <p>{afterRegisterMessage && afterRegisterMessage} </p>
-            </>
-            <p>Already registered? <Link to={'/login'}>Login</Link> </p>
-
-        </>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="text-center mb-4" style={{ color: 'blue' }}>Register</h1>
+                            <form onSubmit={handleRegisterSubmit}>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" name="username" value={registerData.username}
+                                        onChange={handleChange} autoFocus required placeholder="Username" />
+                                </div>
+                                <br/>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" name="password" value={registerData.password}
+                                        onChange={handleChange} required placeholder="Password" />
+                                </div>
+                                <br/>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary btn-block">Register</button>
+                                </div>
+                            </form>
+                            <p className="text-center">{afterRegisterMessage}</p>
+                            <p className="text-center">Already registered? <Link to={'/login'}>Login</Link></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 export default Register;

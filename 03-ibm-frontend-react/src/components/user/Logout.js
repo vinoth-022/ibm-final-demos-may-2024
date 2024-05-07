@@ -20,11 +20,19 @@ const Logout = () => {
     };
 
     return (
-        <>
-            <h1>Logout</h1>
-            <button onClick={logoutSubmit} >Logout</button>
-            {afterLogout && <p>{afterLogout}</p>}
-        </>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="text-center mb-4">Logout</h1>
+                            <button className="btn btn-danger btn-block" onClick={logoutSubmit}>Logout</button>
+                            {afterLogout && <p className="text-center">{afterLogout}</p>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

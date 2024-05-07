@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const empSlice = createSlice({
     name: 'emp',
     initialState : { 
-        empObj: {firstName: 'Sonu', salary: 10.50}  
+        empObj: {}  
     },
     reducers : { // more methods 
         setEmpObj : (state, action) => {
