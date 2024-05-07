@@ -2,7 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import Employee from "./Employee";
 
-const AddEmployee = ({updateTableData}) => {
+// const AddEmployee = ({updateTableData}) => {
+    const AddEmployee = () => {
+
 
     const [empData, setEmpData] = useState({ firstname: '', lastname: '', email: '', salary: '', address: '' });
     const [errors, setErrors] = useState({});
@@ -61,7 +63,7 @@ const AddEmployee = ({updateTableData}) => {
                 setEmpData({ firstname: '', lastname: '', email: '', salary: '', address: '' });
                 // Update table data or perform any necessary actions
                 // setTableData([]);
-                updateTableData();
+                // updateTableData();
             })
             .catch(error => {
                 console.error('Error saving employee data:', error);
