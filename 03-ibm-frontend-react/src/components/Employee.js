@@ -16,6 +16,7 @@ const Employee = () => {
     const [updateTable, setUpdateTable] = useState(false);
 
     
+    
     // Callback function to update table data
     const updateTableData = () => {
         axios.get("http://localhost:8080/emp/get-all-emps")
@@ -27,7 +28,7 @@ const Employee = () => {
         <>
             <AddEmployee updateTableData={updateTableData}/>
             <br/>
-            <TableView tableData={tableData} setTableData={setTableData} setSelectedFlatRows={setSelectedFlatRows} setIsOneRowSelected={setIsOneRowSelected} setIsRowSelected={setIsRowSelected} updateTable={updateTable}/>
+            <TableView tableData={tableData} setTableData={setTableData} updateTable={updateTable}/>
         </>
     );
 };
